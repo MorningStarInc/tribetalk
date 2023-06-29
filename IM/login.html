@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribe Talk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <h1>Tribe Talk</h1>
+    </header>
+    <div class="container">
+      <form>
+        <h2>Log In</h2>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+        <p>New to Tribe Talk? <a href="signup.html">Sign Up</a></p>
+      </form>
+      <div class="login-with-facebook">
+        <button class="btn btn-primary">Log In with Facebook</button>
+      </div>
+    </div>
+    <footer>&copy; 2023 Tribe Talk. All rights reserved.</footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      const loginForm = document.querySelector('#login-form');
+      const emailInput = document.querySelector('#email');
+      const passwordInput = document.querySelector('#password');
+
+      // Add an event listener for when the form is submitted
+      loginForm.addEventListener('submit', function(event) {
+        // Check if the email or password fields are empty
+        if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+          // If either field is empty, prevent the form from being submitted
+          event.preventDefault();
+          // Alert the user that they need to fill in both fields
+          alert('Please enter your email and password.');
+        }
+      });
+    </script>
+  </body>
+</html>
